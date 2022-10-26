@@ -2,5 +2,5 @@ streamlit
 pandas
 yfinance
 pils
-urllib
 jinja2
+bsedata
