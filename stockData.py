@@ -58,16 +58,18 @@ df = get_data(symbol,start,end)
 
 #Display the Sensex
 today = date.today()
-yesterday = today - timedelta(days = 1)
+yesterday = today - timedelta(days = 10)
 senstart = pd.to_datetime(yesterday)
-senend = pd.to_datetime(yesterday)
+senend = pd.to_datetime(today)
 
 sen_df = yf.download("^BSESN", senstart, senend)
+
+
 
 st.write("""
 # Current Sensex Close Value
 """)
-cur_val = sen_df['Close']
+cur_val = sen_df['Close'].iloc[-1]
 st.write("# ", cur_val)
 
 st.write("""
