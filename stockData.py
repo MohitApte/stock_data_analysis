@@ -67,7 +67,7 @@ sen_df = yf.download("^BSESN", senstart, senend)
 st.write("""
 # Current Sensex Close Value
 """)
-cur_val = sen_df['Close'][0]
+cur_val = sen_df['Close']
 st.write("# ", cur_val)
 
 st.write("""
