@@ -93,7 +93,7 @@ tl_data = json.dumps(tl)
 tl_df = pd.read_json(tl_data)
 
 st.write("""
-# BSE Top Runners
+# BSE Top Gainers
 """)
 
 st.write(tg_df)
