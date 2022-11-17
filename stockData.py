@@ -24,15 +24,15 @@ st.image(image, width=500)
 
 # Create a sidebar header
 
-#st.sidebar.header('User Input')
+st.sidebar.header('User Input')
 
 # Create a function to get the users input
 
-#def get_input():
-#    start_date = st.sidebar.text_input("Start Date", "2015-01-02")
-#    end_date = st.sidebar.text_input("End Date", "2020-01-02")
-#    stock_symbol = st.sidebar.text_input("Stock Symbol", "GOOGL")
-#    return start_date, end_date, stock_symbol
+def get_input():
+    start_date = st.sidebar.text_input("Start Date", "2015-01-02")
+    end_date = st.sidebar.text_input("End Date", "2020-01-02")
+    stock_symbol = st.sidebar.text_input("Stock Symbol", "GOOGL")
+    return start_date, end_date, stock_symbol
 
 
 
@@ -40,108 +40,107 @@ st.image(image, width=500)
 
 # Create a function to get the proper company data and the proper timeframe
 
-#def get_data(symbol, start, end):
+def get_data(symbol, start, end):
     #Load Data
 
-#    start = pd.to_datetime(start)
-#    end = pd.to_datetime(end)
+    start = pd.to_datetime(start)
+    end = pd.to_datetime(end)
 
-#    df = yf.download(symbol, start, end)
+    df = yf.download(symbol, start, end)
 
 
     
 
-#   return df
+    return df
 
-#start, end, symbol = get_input()
-#df = get_data(symbol,start,end)
+start, end, symbol = get_input()
+df = get_data(symbol,start,end)
 
 #Display the Sensex
-#today = date.today()
-#yesterday = today - timedelta(days = 10)
-#senstart = pd.to_datetime(yesterday)
-#senend = pd.to_datetime(today)
+today = date.today()
+yesterday = today - timedelta(days = 10)
+senstart = pd.to_datetime(yesterday)
+senend = pd.to_datetime(today)
 
-#sen_df = yf.download("^BSESN", senstart, senend)
+sen_df = yf.download("^BSESN", senstart, senend)
 
 
 
-#st.write("""
+st.write("""
 # Current Sensex Close Value
-#""")
-#cur_val = sen_df['Close'].iloc[-1]
-#st.write("# ", cur_val)
+""")
+cur_val = sen_df['Close'].iloc[-1]
+st.write("# ", cur_val)
 
-#st.write("""
+st.write("""
 # BSE Sensex Close Price
-#""")
-#new_start = pd.to_datetime("2000-01-01")
-#new_sen_df = yf.download("^BSESN", new_start, senend)
+""")
+new_start = pd.to_datetime("2000-01-01")
+new_sen_df = yf.download("^BSESN", new_start, senend)
 
-#st.line_chart(new_sen_df['Close'])
+st.line_chart(new_sen_df['Close'])
 
 
 
 # BSE Top Runners and Top Losers
 
-#b = BSE()
-#tg = b.topGainers()
-#tg_data = json.dumps(tg)
-#tg_df = pd.read_json(tg_data)
-#tl = b.topLosers()
-#tl_data = json.dumps(tl)
-#tl_df = pd.read_json(tl_data)
+b = BSE()
+tg = b.topGainers()
+tg_data = json.dumps(tg)
+tg_df = pd.read_json(tg_data)
+tl = b.topLosers()
+tl_data = json.dumps(tl)
+tl_df = pd.read_json(tl_data)
 
-#st.write("""
+st.write("""
 # BSE Top Gainers
-#""")
+""")
 
-#st.write(tg_df)
+st.write(tg_df)
 
-#st.write("""
+st.write("""
 # BSE Top Losers
-#""")
+""")
 
-#st.write(tl_df)
-#st.write("----------------------------------------------------------------------------------")
+st.write(tl_df)
+st.write("----------------------------------------------------------------------------------")
 
-#st.markdown("""
-#<style>
-#.big-font {
-#    font-size:30px !important;
-#    color: red;
-#}
-#.norm-font {
-#    font-size:30px !important;
-#}
-#</style>
-#""", unsafe_allow_html=True)
-#st.markdown('<p class="big-font">Disclaimer : </p>', unsafe_allow_html=True)
-#st.markdown('<p class="norm-font">On Mobile, Open > at the top left for Company Specific Stock Details</p>', unsafe_allow_html=True)
+st.markdown("""
+<style>
+.big-font {
+    font-size:30px !important;
+    color: red;
+}
+.norm-font {
+    font-size:30px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+st.markdown('<p class="big-font">Disclaimer : </p>', unsafe_allow_html=True)
+st.markdown('<p class="norm-font">On Mobile, Open > at the top left for Company Specific Stock Details</p>', unsafe_allow_html=True)
 
 
 
-#st.write("# Stock Statistics of "+ symbol)
+st.write("# Stock Statistics of "+ symbol)
 
 
 
 #Display the close price
 
-#st.header(symbol + " Close Price\n")
-#st.line_chart(df['Close'])
+st.header(symbol + " Close Price\n")
+st.line_chart(df['Close'])
 
 #Display the Volume
 
 
-#st.header(symbol + " Volume\n")
-#st.line_chart(df['Volume'])
+st.header(symbol + " Volume\n")
+st.line_chart(df['Volume'])
 
 
 # Display the statistics
 
-#st.header('Data Statistics')
-#st.write(df.describe())
-
+st.header('Data Statistics')
+st.write(df.describe())
 
 
 
