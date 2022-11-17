@@ -16,11 +16,11 @@ st.write("""
 # Stock Market Analysis
 """)
 
-//urllib.request.urlretrieve('https://cpb-us-w2.wpmucdn.com/u.osu.edu/dist/6/44792/files/2017/04/stock-market-3-21gyd1b.jpg', "stock_image")
+#urllib.request.urlretrieve('https://cpb-us-w2.wpmucdn.com/u.osu.edu/dist/6/44792/files/2017/04/stock-market-3-21gyd1b.jpg', "stock_image")
 
-//image = Image.open("stock_image")
+#image = Image.open("stock_image")
 
-//st.image(image, width=500)
+#st.image(image, width=500)
 
 # Create a sidebar header
 
